@@ -1,0 +1,18 @@
+version: '3.2'
+services:
+  pms-mysql:
+    # disabling line below as image info is given in file - Dockerfile.MySql
+    # image: mysql:8.0
+    container_name: quote-mysql
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.MySql
+    command: [ 'mysqld' ]
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Krishna
+      MYSQL_ROOT_PASSWORD: Krishna
+      MYSQL_DATABASE: Radha
+    ports:
+      - "3307:3306"
