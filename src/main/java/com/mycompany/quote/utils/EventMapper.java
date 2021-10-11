@@ -10,6 +10,6 @@ import org.mapstruct.factory.Mappers;
 public interface EventMapper {
     EventMapper INSTANCE = Mappers.getMapper(EventMapper.class);
 
-    Event eventDTOToEvent(EventDTO eventDTO);
-    EventDTO eventToEventDTO(Event event);
+    Event eventDTOToEvent(EventDTO eventDTO);//mapping EventDTO to Event Entity CLASS
+    EventDTO eventToEventDTO(Event event); // mapping Event Entity to Event DTO CLASS
 }

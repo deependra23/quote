@@ -1,21 +1,26 @@
 package com.mycompany.quote.models.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
-import java.util.Date;
+
 //entity annotation create table in the database
 @Setter @Getter
 public class EventDTO {
     //id creates primary key and generated value is to create id automatically
 
-    private int id;
+    private Long id;
     private String eventTitle;
     private String description;
-    private Date date;
+    @JsonFormat(pattern="yyyy/MM/dd")
+    private LocalDate eventDate;
+
     private ZonedDateTime createdAt;
-    private Date updatedAt;
+
+    private ZonedDateTime updatedAt;
 
     public EventDTO(){
 
